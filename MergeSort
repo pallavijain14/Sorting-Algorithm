@@ -1,0 +1,22 @@
+package com.pallavi.sorting;
+
+public class MergeSort {
+
+
+	int[] merge(int[] arr, int l, int h) {
+		
+		if(l == h) {
+			int[] a = new int[];
+			 a[0] = a[l];
+			return a;
+		}
+		
+		int m = (l+h)/2;
+		
+		int[] left = merge(arr, l, m);
+		int[] right = merge(arr, m+1, h);
+		int[] ans = merge(left, right);
+		
+		return ans;
+	}
+}
