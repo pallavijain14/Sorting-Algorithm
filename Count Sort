@@ -1,0 +1,21 @@
+public class Solution {
+    public int[] solve(int[] A) {
+        int n = A.length;
+        int mx = -1;
+        for(int i = 0 ; i < n ; i++){
+            mx = Math.max(mx, A[i]);
+        }
+        int[] freq = new int[mx + 1];
+        for(int i = 0 ; i < n ; i++){
+            freq[A[i]] += 1;
+        }
+        int k = 0;
+        for(int i = 0 ; i <= mx ; i++){
+            for(int j = 0 ; j < freq[i] ; j++){
+                A[k] = i;
+                k++;
+            }
+        }
+        return A;
+    }
+}
